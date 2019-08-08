@@ -10,7 +10,9 @@ Before("@login") do
   user = CONFIG["users"]["cat_manager"]
   @login_page.go
   @login_page.with(user["email"], user["pass"])
-  expect(page).to have_text user["name"]
+  puts user["email"]
+  puts user["pass"]
+  #expect(page).to have_text user["name"]
 end
 
 After do |scenario|
