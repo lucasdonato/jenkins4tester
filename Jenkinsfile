@@ -1,3 +1,6 @@
+//configurações de cores para as notificações slack
+def COLOR_MAP = ['SUCCESS': 'good', 'FAILURE': 'danger', 'UNSTABLE': 'danger', 'ABORTED': 'danger']
+
 pipeline {
   agent {
     docker {
