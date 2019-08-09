@@ -32,6 +32,8 @@ pipeline {
                     slackSend channel: "#automacao-de-testes",
                         color: COLOR_MAP[currentBuild.currentResult],
                         message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n Mais informacoes acesse: ${env.BUILD_URL}"
+
+                         emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
         }
       }
     }
