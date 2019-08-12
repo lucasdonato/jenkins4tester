@@ -1,11 +1,12 @@
 ---
 default: -p config -p firefox -p html -p progress
-ci: -p config -p headless -p json -p pretty
+ci: -p config -p headless -p json -p pretty -p html -p xml
 config: ENV_TYPE=config
 firefox: BROWSER=firefox
 chrome: BROWSER=chrome
 headless: BROWSER=headless
 html: --format html --out=log/report.html
 json: --format json --out=log/report.json
+xml:  --format junit --out log
 pretty: --format pretty
 progress: --format progress
